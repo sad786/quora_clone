@@ -1,5 +1,4 @@
-# A simpme Quora like website that lets users
-# posts questions, answers questions posted by others and like each other posts
+# A simpme Quora like website that let users posts questions, answers questions posted by others and like each other posts
 
 css and stlying is not done perfectly will improve later
 
