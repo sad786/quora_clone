@@ -3,13 +3,14 @@
 css and stlying is not done perfectly will improve later
 
 Project is deployed on Render Cloud Service
-**Deployed Link:** 
+**Deployed Link:** https://quora-p9r6.onrender.com/
+
 default login 
 username - tony
 password - Stark@123
 
 Project is develpied in django, a python web framework
-Project uses PostgreSQL cloud databse to sotr questions, answers and users information 
+Project uses PostgreSQL cloud databse to store questions, answers and users information 
 # Features
 1. User can add questions as a post
 2. User can see questions posted by others
