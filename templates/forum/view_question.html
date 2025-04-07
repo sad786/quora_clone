@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="question-detail">
+    <h1>{{ question.title }}</h1>
+    <p>{{ question.description }}</p>
+    <small>Asked by {{ question.user.username }} on {{ question.created_at }}</small>
+
+    <h2>Answers</h2>
+    {% if answers %}
+        <ul>
+            {% for answer in answers %}
+                <li>
+                    <p>{{ answer.text }}</p>
+                    <small>Answered by {{ answer.user.username }} on {{ answer.created_at }}</small>
+                    <form method="POST" action="{% url 'like_answer' answer.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="like-button">
+                            {% if answer.is_liked %} Liked ({{ answer.likes.count }}) {% else %} Like ({{ answer.likes.count }}) {% endif %}
+                        </button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No answers yet. Be the first to answer!</p>
+    {% endif %}
+
+    <h3>Post an Answer</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+</div>
+{% endblock %}

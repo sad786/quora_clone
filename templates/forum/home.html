@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="question-list">
+    <h1>All Questions</h1>
+    <a href="{% url 'post_question' %}" class="btn">Post a Question</a>
+    {% if questions %}
+        <ul>
+            {% for question in questions %}
+                <li>
+                    <h3><a href="{% url 'view_question' question.pk %}">{{ question.title }}</a></h3>
+                    <p>{{ question.description }}</p>
+                    <small>Asked by {{ question.user.username }} on {{ question.created_at }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No questions available. Be the first to post one!</p>
+    {% endif %}
+</div>
+{% endblock %}
