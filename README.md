@@ -1,5 +1,5 @@
 # A simpme Quora like website that lets users
-# posts questions, answera questions posted by others nad like each other answers
+# posts questions, answers questions posted by others and like each other posts
 
 css and stlying is not done perfectly will improve later
 
