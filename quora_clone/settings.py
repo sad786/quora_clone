@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^gg^u-h5cxt6v*3a2lf&tvmzawpeh)ma0uxs$$^3fti@bawv3u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['quora-p9r6.onrender.com']
 
 
 # Application definition
@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'forum',  # Your forum app
+    'forum',
+    'accounts',  # Your forum app
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.WhitenoiseMiddleware'
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -139,6 +141,8 @@ STATICFILES_DIRS = [
 #    BASE_DIR / 'static',
     os.path.join(BASE_DIR,'static'),
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedMainfestFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
