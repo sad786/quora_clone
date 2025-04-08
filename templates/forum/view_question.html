@@ -23,17 +23,17 @@
                 </li>
             {% endfor %}
         </ul>
-    </div>
-    {% else %}
-        <p>No answers yet. Be the first to answer!</p>
-    {% endif %}
+        {% else %}
+            <p>No answers yet. Be the first to answer!</p>
+        {% endif %}
 
-    <h3>Post an Answer</h3>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-    <a href="{% url 'home' %}">Back to Home</a>
+        <h3>Post an Answer</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </div>
 </div>
 {% endblock %}
