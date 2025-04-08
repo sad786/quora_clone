@@ -8,6 +8,7 @@
 
     <h2>Answers</h2>
     {% if answers %}
+    <div class="question-list"></div>
         <ul>
             {% for answer in answers %}
                 <li>
@@ -22,6 +23,7 @@
                 </li>
             {% endfor %}
         </ul>
+    </div>
     {% else %}
         <p>No answers yet. Be the first to answer!</p>
     {% endif %}
