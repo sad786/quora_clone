@@ -3,8 +3,19 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
+main {
+    flex:1;
+}
+header {
+    background-color: #096bce;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 nav {
     background-color: #333;
     color: white;
